@@ -1,0 +1,14 @@
+Basic
+Multyplayer game
+Increase score by collecting stars
+Die when you colide with another enemy
+submit your score after you die
+Each user gets different Image and the letters of his name on top
+
+
+Improvements:
+Have 2 lifes, when you first collide with an enemy it will reset you and have a shield for 3 seconds
+increase your size and power after collecting stars, the bigger you are, your speed goes down but you kill others when you collide with them
+
+Super Improvements:
+Make the map bigger then the viewport and users can navigate through it
