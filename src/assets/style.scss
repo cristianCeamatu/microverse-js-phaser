@@ -1,9 +1,41 @@
-$body-color: yellow;
-
 body {
-  background-color: $body-color;
+  background:
+  linear-gradient(324deg, #232927 4%,   transparent 4%) -70px 43px,
+  linear-gradient( 36deg, #232927 4%,   transparent 4%) 30px 43px,
+  linear-gradient( 72deg, #e3d7bf 8.5%, transparent 8.5%) 30px 43px,
+  linear-gradient(288deg, #e3d7bf 8.5%, transparent 8.5%) -70px 43px,
+  linear-gradient(216deg, #e3d7bf 7.5%, transparent 7.5%) -70px 23px,
+  linear-gradient(144deg, #e3d7bf 7.5%, transparent 7.5%) 30px 23px,
+  
+  linear-gradient(324deg, #232927 4%,   transparent 4%) -20px 93px,
+  linear-gradient( 36deg, #232927 4%,   transparent 4%) 80px 93px,
+  linear-gradient( 72deg, #e3d7bf 8.5%, transparent 8.5%) 80px 93px,
+  linear-gradient(288deg, #e3d7bf 8.5%, transparent 8.5%) -20px 93px,
+  linear-gradient(216deg, #e3d7bf 7.5%, transparent 7.5%) -20px 73px,
+  linear-gradient(144deg, #e3d7bf 7.5%, transparent 7.5%) 80px 73px;
+  background-color: #232927;
+  background-size: 100px 100px;
+  padding: 15px;
+}
 
-  div {
-    background-color: red;
-  }
+canvas {
+  width: 100%;
+  max-width: 1024px;
+  margin: 30px auto;
+  display: block;
+  /* #1 */
+  border: 5px solid hsl(0, 0%, 40%);
+  
+  /* #2 */
+  padding: 5px;
+  background: hsl(0, 0%, 20%);
+  
+  /* #3 */
+  outline: 5px solid hsl(0, 0%, 60%);
+  
+  /* #4 AND INFINITY!!! (CSS3 only) */
+  box-shadow:
+      0 0 0 10px hsl(0, 0%, 80%),
+      0 0 0 15px hsl(0, 0%, 90%);
+  
 }

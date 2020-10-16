@@ -1,15 +1,35 @@
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import Phaser from 'phaser';
+
 import './assets/style.scss';
 
-function component() {
-  const element = document.createElement('div');
+console.log('working');
 
-  element.innerHTML = 'Hello world1!';
-  element.classList.add('h3');
+const config = {
+  type: Phaser.AUTO,
+  parent: 'phaser-example',
+  width: 800,
+  height: 600,
+  physics: {
+    default: 'arcade',
+    arcade: {
+      debug: false,
+      gravity: { y: 0 },
+    },
+  },
+  scene: {
+    preload,
+    create,
+    update,
+  },
+};
 
-  return element;
-}
+const game = new Phaser.Game(config);
 
-document.body.appendChild(component());
+function preload() {}
+
+function create() {}
+
+function update() {}
