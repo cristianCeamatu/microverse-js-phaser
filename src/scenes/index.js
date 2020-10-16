@@ -1,5 +1,5 @@
-import scene1 from './sceneTemplate';
+// import scene1 from './TemplateScene';
 
-const scenes = [scene1];
+// const scenes = [scene1];
 
-export default scenes;
+// export default scenes;

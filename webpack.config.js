@@ -17,6 +17,10 @@ module.exports = {
     hot: true,
     port: 3000,
   },
+  // Fix the socket.io error
+  node: {
+    fs: 'empty',
+  },
   module: {
     rules: [
       {
@@ -38,9 +42,9 @@ module.exports = {
     ],
   },
   plugins: [
-    new CleanWebpackPlugin({
-      root: path.resolve(__dirname, '../'),
-    }),
+    // new CleanWebpackPlugin({
+    //   root: path.resolve(__dirname, '../'),
+    // }),
     new webpack.DefinePlugin({
       CANVAS_RENDERER: JSON.stringify(true),
       WEBGL_RENDERER: JSON.stringify(true),
