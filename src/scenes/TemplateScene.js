@@ -1,6 +1,8 @@
 import Phaser from 'phaser';
 import io from 'socket.io-client';
 
+import player1 from '../assets/player1.png';
+
 export default class TemplateScene extends Phaser.Scene {
   constructor() {
     super('Template');
@@ -8,13 +10,20 @@ export default class TemplateScene extends Phaser.Scene {
 
   preload() {
     console.log('preload');
-    console.log(this);
+    this.load.image('ship', player1);
   }
 
   create() {
+    const self = this;
     this.socket = io();
-    console.log(this.socket);
-    // console.log(this.socket);
+    this.socket.on('currentPlayers', (players) => {
+      console.log(players);
+      Object.keys(players).forEach((id) => {
+        if (players[id].playerId === self.socket.id) {
+          // addPlayer(self, players[id]);
+        }
+      });
+    });
   }
 
   update() {
