@@ -9,6 +9,7 @@ const star = {
   x: Math.floor(Math.random() * 700) + 50,
   y: Math.floor(Math.random() * 500) + 50,
 };
+
 const scores = {
   blue: 0,
   red: 0,
@@ -21,14 +22,14 @@ app.get('/', (req, res) => {
 });
 
 io.on('connection', (socket) => {
-  console.log('a user connected');
+  console.log(`User with id: ${socket.id} connected`);
 
   players[socket.id] = {
     rotation: 0,
     x: Math.floor(Math.random() * 700) + 50,
     y: Math.floor(Math.random() * 500) + 50,
     playerId: socket.id,
-    team: Math.floor(Math.random() * 2) == 0 ? 'red' : 'blue',
+    team: Math.floor(Math.random() * 2) === 0 ? 'red' : 'blue',
   };
 
   socket.emit('currentPlayers', players);
@@ -40,7 +41,7 @@ io.on('connection', (socket) => {
   socket.broadcast.emit('newPlayer', players[socket.id]);
 
   socket.on('disconnect', () => {
-    console.log('user disconnected');
+    console.log(`User with id: ${socket.id} disconnected`);
 
     // remove this player from our players object
     delete players[socket.id];

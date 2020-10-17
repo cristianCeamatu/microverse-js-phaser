@@ -79,7 +79,7 @@ export default class TemplateScene extends Phaser.Scene {
       self.physics.add.overlap(
         self.ship,
         self.star,
-        function () {
+        () => {
           this.socket.emit('starCollected');
         },
         null,
@@ -111,8 +111,7 @@ export default class TemplateScene extends Phaser.Scene {
       this.physics.world.wrap(this.ship, 5);
 
       // emit player movement
-      const { x } = this.ship;
-      const { y } = this.ship;
+      const { x, y } = this.ship;
       const r = this.ship.rotation;
       if (
         this.ship.oldPosition &&
